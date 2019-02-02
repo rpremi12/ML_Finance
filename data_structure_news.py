@@ -62,7 +62,7 @@ def scrape_data(data_type, data_list, size_of_list):
     https://rss2json.com/docs
     https://rss2json.com/rss-to-json-api-python-example
 
-
+    data key for newsapi: 62ace5950cb941f2aaa5f96ce645bdf8
     '''
 
     for index in range(size_of_list):
@@ -83,15 +83,17 @@ def main():
 
     testRSSdata.article = scrape_data(article, test_article_list, 20)
 
-    #print(testRSSdata.article)
+    import requests
 
-    er = EventRegistry(apiKey = YOUR_API_KEY)
-    q = QueryArticlesIter(
-        keywords = QueryItems.OR(["George Clooney", "Sandra Bullock"]),
-        dataType = ["news", "blog"])
-    # obtain at most 500 newest articles or blog posts
-    for art in q.execQuery(er, sortBy = "date", maxItems = 500):
-        print(art)
+    url = ('https://newsapi.org/v2/everything?'
+           'q=Apple&'
+           'from=2019-02-02&'
+           'sortBy=popularity&'
+           'apiKey=62ace5950cb941f2aaa5f96ce645bdf8')
+
+    response = requests.get(url)
+
+    print(r.json)
 
 if __name__ == '__main__':
     #main() function above will be called when this file is the top level code.
