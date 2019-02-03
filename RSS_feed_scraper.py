@@ -50,14 +50,6 @@ def main():
     print(filtered_list)
     print("number of articles found: ", len(filtered_list))
 
-    '''
-    final_list = []
-    old_list = ['abc123', 'def456', 'ghi789', '123abc1231312', 'abc12312123']
-    new_list = [x for x in old_list if re.search('abc', x)]
-    for item in new_list:
-        final_list.append(item)
-    print(final_list)
-    '''
 
 if __name__ == '__main__':
     #main() function above will be called when this file is the top level code.
