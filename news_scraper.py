@@ -89,6 +89,7 @@ def scrape(q=None, language=None, country = None, category=None, sources= None,p
         if i['url'] in urls:
             pass
         else:
+            # use to search for specific names
             total+=1
             urls.append(i['url'])
             t_score = score(scorer(i['title']))
@@ -132,6 +133,7 @@ def scrape(q=None, language=None, country = None, category=None, sources= None,p
 
 def main():
     #print(scorer("your waifu is trash"))
-     test = scrape("Tesla", category="business")
+     test = scrape("Google", category="business")
+
 if __name__ == "__main__":
     main()
