@@ -3,18 +3,20 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
-#export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 # Instantiates a client
-client = language.LanguageServiceClient()
-#credentials = service_account.Credentials.from_service_account_file('/path/to/json.json')
-# The text to analyze
-text = u'Hello, world!'
-document = types.Document(
-    content=text,
-    type=enums.Document.Type.PLAIN_TEXT)
 
-# Detects the sentiment of the text
-sentiment = client.analyze_sentiment(document=document).document_sentiment
+def sent(str1):
+    client = language.LanguageServiceClient()
 
-print('Text: {}'.format(text))
-print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+    # The text to analyze
+    text = str1
+    document = types.Document(
+        content=text,
+        type=enums.Document.Type.PLAIN_TEXT)
+
+    # Detects the sentiment of the text
+    sentiment = client.analyze_sentiment(document=document).document_sentiment
+
+    return ('{}'.format(sentiment.score))
+
+#analyze_sentiment("I really hate C")
