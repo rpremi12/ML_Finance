@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<?php session_start();?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,11 +15,18 @@
 <body>
         <div class="container-fluid bkg">
             <div class=".d-flex fill" align="center">
+                <h1>
+
+                </h1>
                 <h1>Pythia</h1>
                 <h2>Stock analysis<br>simplified.</h2>
                      <div class=".d-flex col-10">
-                        <a href="#"><img src="search.png" class="icon"></a>
-                        <input class="col-8 inputIcon" type="text" name="#" placeholder="Stock Symbol / Company Name">
+                         <div class="search align-items-center">
+                             <form action="index.php" method="POST">
+                                 <input type="text" name="pass" class="col-8 inputIcon" placeholder="Stock Symbol / Company Name">
+                             </form>
+                         </div>
+                        <!--<input id="search" class="col-8 inputIcon" type="text" name="#" placeholder="Stock Symbol / Company Name"> -->
                     </div>
             </div>
         </div>
