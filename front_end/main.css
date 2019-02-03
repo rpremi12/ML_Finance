@@ -22,16 +22,28 @@ input {
 }
 h1{ font-size: 64px;
     color: white;
-    margin: 200px 0px 5px 0px;}
+    margin: 200px 0px 5px 0px;
+    font-family: zen-new, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
 h2{
     font-weight: 300;
     font-size: 18px;
     color: white;
-    margin-bottom:20px;}
+    margin-bottom:20px;
+    font-family: zen-new, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
 ::placeholder {
     font-size: 12px;
     text-align: center;
-    margin-right: 3px;
+    margin-right: 3px
+    font-family: zen-new, sans-serif;
+    font-weight: 200;
+    font-style: normal;;
 }
 
 .icon {

@@ -6,20 +6,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/vve8cna.css">
     <link rel="stylesheet" href="info_screen.css">
-    <link rel="script" href="node_modules/angular-chart.js/Chart.min.js">
+    <link rel="script" href="node_modules/angular-chart.js/angular-chart.min.js">
+    <link rel="script" href="node_modules/angular-chart.js/angular-chart.js">
 
     <title>Info</title>
-    <style>
-
-    </style>
 </head>
 <body>
+<a href="index.html"><h1>Pythia</h1></a>
+<div class="container">
+    <div class="search align-items-center">
+        <a href="#"><img src="search.png" class="icon"></a>
+        <input class="col-8 inputIcon" type="text" name="#" placeholder="Stock Symbol / Company Name">
+    </div>
+</div>
 <div class="container">
     <div class="infoCard">
         <div class="align-items-center">
-            <p class="companyName">Toyota Motors</p>
+            <h2 class="companyName">Toyota Motors</h2>
             <p class="nyse">NYSE: TM</p>
-            <img src="placeholder_graph.png" class="graph">
+            <!--<img src="placeholder_graph.png" class="graph">-->
+
             <div class="sentimentTotal">
                 <div class="sentimentGrid">
                     <p class="sentiment align-items-center">Sentiment:</p>
