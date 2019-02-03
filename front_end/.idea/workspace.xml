@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="91ce70ad-4f3d-4277-8199-359c55dd12a7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info_screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/info_screen.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info_screen.html" beforeDir="false" afterPath="$PROJECT_DIR$/info_screen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bower_components.ember-try/" />
     <ignored path="$PROJECT_DIR$/.node_modules.ember-try/" />
@@ -23,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info_screen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="45" column="15" selection-start-line="41" selection-start-column="4" selection-end-line="48" selection-end-column="23" />
+            <state relative-caret-position="264">
+              <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
               <folding>
                 <element signature="e#23#202#0" />
               </folding>
@@ -35,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/info_screen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="335">
+              <caret line="143" column="60" selection-start-line="143" selection-start-column="60" selection-end-line="143" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -53,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="23" column="64" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="552">
+              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -82,10 +84,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/info_screen.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/main.css" />
         <option value="$PROJECT_DIR$/main_menu.html" />
+        <option value="$PROJECT_DIR$/info_screen.css" />
         <option value="$PROJECT_DIR$/info_screen.html" />
       </list>
     </option>
@@ -132,11 +134,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.main_menu.html">
+  <component name="RunManager" selected="JavaScript Debug.info_screen.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/front_end/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" uri="http://localhost:63342/front_end/menuscreen.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="info_screen.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/front_end/info_screen.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="main_menu.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/front_end/main_menu.html" useBuiltInWebServerPort="true">
@@ -145,9 +150,11 @@
     <list>
       <item itemvalue="JavaScript Debug.main_menu.html" />
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.info_screen.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.info_screen.html" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -163,18 +170,18 @@
       <option name="presentableId" value="Default" />
       <updated>1549161608265</updated>
       <workItem from="1549161609971" duration="6039000" />
-      <workItem from="1549179125610" duration="4365000" />
+      <workItem from="1549179125610" duration="12789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10404000" />
+    <option name="totallyTimeSpent" value="18828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21000704" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21000704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -252,8 +259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/info_screen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="45" column="15" selection-start-line="41" selection-start-column="4" selection-end-line="48" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
           <folding>
             <element signature="e#23#202#0" />
           </folding>
@@ -262,15 +269,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="23" column="64" selection-end-line="37" selection-end-column="7" />
+        <state relative-caret-position="552">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/info_screen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="335">
+          <caret line="143" column="60" selection-start-line="143" selection-start-column="60" selection-end-line="143" selection-end-column="60" />
         </state>
       </provider>
     </entry>

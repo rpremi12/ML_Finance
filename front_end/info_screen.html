@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/vve8cna.css">
     <link rel="stylesheet" href="info_screen.css">
-    <link rel="script" href="node_modules/angular-chart.js/angular-chart.min.js">
-    <link rel="script" href="node_modules/angular-chart.js/angular-chart.js">
-
-    <title>Info</title>
+    <link href="node_modules/chart.js/dist/Chart.js">
+    <title>Information</title>
 </head>
 <body>
+
+<!--Jquery Link-->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
 <a href="main_menu.html"><h1>Pythia</h1></a>
 <div class="container">
     <div class="search align-items-center">
@@ -23,22 +25,127 @@
         <div class="align-items-center">
             <h2 class="companyName">Toyota Motors</h2>
             <p class="nyse">NYSE: TM</p>
-            <!--<img src="placeholder_graph.png" class="graph">-->
 
+
+            <!--Graph-->
+            <script src="node_modules/chart.js/dist/Chart.js"></script>
+            <div class="chart-container">
+                <canvas id="line-chartcanvas" width="400px" height="400px"></canvas>
+                <script>
+                    $(function(){
+
+                        //get the line chart canvas
+                        var ctx = $("#line-chartcanvas");
+
+                        //line chart data
+                        var data = {
+                            labels: [""],
+                            datasets: [
+                                {
+                                    label: "Actual",
+                                    data: [],
+                                    backgroundColor: "blue",
+                                    borderColor: "lightblue",
+                                    fill: false,
+                                    lineTension: 0,
+                                    radius: 5
+                                },
+                                {
+                                    label: "Predicted",
+                                    data: [],
+                                    backgroundColor: "green",
+                                    borderColor: "lightgreen",
+                                    fill: false,
+                                    lineTension: 0,
+                                    radius: 5
+                                }
+                            ]
+                        };
+
+                        //options
+                        var options = {
+                            responsive: true,
+                            title: {
+                                display: true,
+                                position: "top",
+                                text: "Stock Price",
+                                fontSize: 18,
+                                fontColor: "#111"
+                            },
+                            scales: {
+                                xAxes: [{
+                                    gridLines: {
+                                        display: false,
+                                        color: "black"
+                                    },
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: "Date",
+                                    }
+                                }],
+                                yAxes: [{
+                                    gridLines: {
+                                        color: "black",
+                                        borderDash: [2, 5],
+                                    },
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: "Price",
+                                    },
+                                    ticks:{
+                                        beginAtZero: false,
+                                    }
+                                }]
+                            }
+                        };
+
+                        //create Chart class object
+                        var chart = new Chart(ctx, {
+                            type: "line",
+                            data: data,
+                            options: options
+                        });
+                    });
+                </script>
+            </div>
             <div class="sentimentTotal">
                 <div class="sentimentGrid">
                     <p class="sentiment align-items-center">Sentiment:</p>
-                    <p class="sentimentResult align-items-center">Buy</p>
+                    <p class="sentimentResult align-items-center sent" id="sent">Buy</p>
+                </div>
+            </div>
+            <div class="sentimentTotal">
+                <div class="sentimentGrid">
+                    <p class="sentiment align-items-center">Predicted Price:</p>
+                    <p class="sentimentResult align-items-center" id="pri">$122.59</p>
                 </div>
             </div>
             <div class="accTotal">
                 <div class="accGrid">
                     <p class="acc align-items-center">Accuracy:</p>
-                    <p class="accResult align-items-center">87%</p>
+                    <p class="accResult align-items-center" id="accu">87%</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+        <!--<img src="" alt="oops"id='output'>-->
+        <script>
+
+            var sent = document.getElementById('sent');
+            var pri = document.getElementById('pri');
+            var accu = document.getElementById('accu');
+
+            document.getElementById('sent').innerHTML = "Sell";
+            document.getElementById('pri').innerHTML = "$175.43";
+            document.getElementById('accu').innerHTML = "96%";
+
+    </script>
+
+
+
 </body>
 </html>

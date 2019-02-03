@@ -56,7 +56,7 @@ input {
     width: 135%;
     height:30%;
     align-content: center;
-    margin: 0px 0px 10px 5.4%;
+    margin: 0px 0px 10px 5.2%;
 }
 
 
@@ -83,6 +83,13 @@ input {
     font-family: zen-new, sans-serif;
     font-weight: 400;
     font-style: italic;
+}
+
+.chart-container {
+    width: 60%;
+    height: 30%;
+    margin: 0 auto;
+    display: block;
 }
 
 .sentiment {
