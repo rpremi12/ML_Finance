@@ -17,6 +17,13 @@ class article_data:
         self.description, \
         self.pubDate)
 
+    # make it into a string
+    def __str__(self):
+        return "(%s, %s, %s, %s)" \
+        % (self.title, \
+        self.URL, \
+        self.description, \
+        self.pubDate)
     # define equality
     # compares objects and see when they're equal
     def __eq__(self, other):

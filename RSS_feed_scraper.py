@@ -30,19 +30,34 @@ def generate_list_of_articles(RSS_to_json_url):
 
     return articles
 
-def check_for_company(company_name, list):
-    filtered_articles = []
-    filtered_list = [x for x in list if re.search(company_name, x)]
-
+def check_for_company(keyword, unfiltered_list):
+    final_list = []
+    old_list = unfiltered_list
+    new_list = [x for x in old_list if re.search(keyword, str(x).lower())]
     for item in new_list:
-        filtered_articles.append(item)
+        final_list.append(item)
+
+    return final_list
 
 def main():
+    test = input("Enter company name: ")
 
     article_list = generate_list_of_articles(RSS_data_list)
-    print(article_list)
-    print("number of articles: ", len(article_list))
 
+    filtered_list = check_for_company(test.lower(), article_list)
+
+    #print(type(str(article_list[0])))
+    print(filtered_list)
+    print("number of articles found: ", len(filtered_list))
+
+    '''
+    final_list = []
+    old_list = ['abc123', 'def456', 'ghi789', '123abc1231312', 'abc12312123']
+    new_list = [x for x in old_list if re.search('abc', x)]
+    for item in new_list:
+        final_list.append(item)
+    print(final_list)
+    '''
 
 if __name__ == '__main__':
     #main() function above will be called when this file is the top level code.
