@@ -55,9 +55,6 @@ def scorer(desc):
     return scores
 
 
-
-
-
 def scrape(q=None, language=None, country = None, category= None, sources= None,from_param= None, to= None, pageSize= None, page= None, long = False, h_balance = 0.5):
 
     newsapi = NewsApiClient(api_key='2d4d70291f5548bb8c6776f5ddeefd25')
