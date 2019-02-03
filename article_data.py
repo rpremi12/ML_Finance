@@ -8,7 +8,6 @@ class article_data:
         self.description = description
         self.pubDate = pubDate
 
-
     # official string representitle_listation to make it look better in console
     #instead of showing where it's stored in memory
     def __repr__(self):
