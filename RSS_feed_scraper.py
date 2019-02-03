@@ -1,96 +1,88 @@
 # import functions
 import urllib.request
 import json
+import re
 
 # making empty list
-article_list = []
-headline_list = []
+title_list = []
 URL_list = []
-test_short_descriptor_list = []
-test_exact_time_released_list = []
+description_list = []
+pubDate_list = []
 
 # declaring data
-url = "https://api.rss2json.com/v1/api.json\
-?rss_url=http%3A%2F%2Fwww.reddit.com%2F.rss\
-&api_key=aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi\
-&order_by=pubDate&order_dir=desc&count=25"
-api_key = "aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi"
-response = urllib.request.urlopen(url)
-data = json.loads(response.read());
+RSS_data_list = ["https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.reddit.com%2Fr%2Ffinance%2F.rss&api_key=aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi&count=100", "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7014.xml&api_key=aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi&count=100", "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7031.xml&api_key=aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi&count=100", "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7455.xml&api_key=aonvwfrfutzuxjksa4uabvwta72ctveswdfk2hoi&count=100", ]
 
 # creates RSSdata
-class RSSdata:
+class article_data:
 
     # self denotes this object itself
-    def __init__(self, article_title, headline, URL, short_descriptor, exact_time_released):
-        self.article_title = article_title
-        self.headline = headline
+    def __init__(self, title, URL, description, pubDate):
+        self.title = title
         self.URL = URL
-        self.short_descriptor = short_descriptor
-        self.exact_time_released = exact_time_released
+        self.description = description
+        self.pubDate = pubDate
 
 
     # official string representation to make it look better in console
     #instead of showing where it's stored in memory
-    def __repr__(self):
-        return "(%s, %s, %s, %s, %s)" \
-        % (self.article, \
-        self.headline, \
+    def __repr__(selshort_descriptorf):
+        return "(%s, %s, %s, %s)" \
+        % (self.title, \
         self.URL, \
-        self.short_descriptor, \
-        self.exact_time_released)
+        self.description, \
+        self.pubDate)
 
     # define equality
     # compares objects and see when they're equal
     def __eq__(self, other):
         return type(other) == RSSdata \
-        and self.article == other.article \
-        and self.headline == other.headline \
+        and self.title == other.title \
         and self.URL == other.URL \
-        and self.short_descriptor == other.short_descriptor \
-        and self.exact_time_released == other.exact_time_released
+        and self.description == other.description \
+        and self.pubDate == other.pubDate
 
+def generate_data(RSS_URL):
 
-    '''
+    url = RSS_URL
 
-    purpose: generate the lists of each type of data that is needed for the language processing
-
-    f = open("data.txt","r")
-    result = f.readline().strip()
-
-    data key for newsapi: 62acetest_article_list5950cb941f2aaa5f96ce645bdf8
-
-    make
-
-    '''
-
-def check_for_company(company_name, list): # eg. check_for_company("Google", reddit_RSS_data.article_title)
-    company_name = str(company_name)
-    
-
-
-def main():
-
-    reddit_RSS_data = RSSdata(article_list,\
-    headline_list,\
-    URL_list,\
-    test_short_descriptor_list,\
-    test_exact_time_released_list)
-
-    for item in data['items']:
-        reddit_RSS_data.article_title.append(item['title'])
-        reddit_RSS_data.exact_time_released.append(item['pubDate'])
-        reddit_RSS_data.short_descriptor.append(item['description'])
-        reddit_RSS_data.URL.append(item['link'])
+    response = urllib.request.urlopen(url)
+    data = json.loads(response.read());
 
     print('====== ' + data['status'] + ' ======')
 
+    for item in data['items']:
+        RSS_data.title.append(item['title'])
+        RSS_data.URL.append(item['link'])
+        RSS_data.description.append(item['description'])
+        RSS_data.pubDate.append(item['pubDate'])
+
+
+def check_for_company(company_name, list): # eg. check_for_company("Google", reddit_RSS_data.artishort_descriptorcle_title)
+    new_list = [x for x in list if re.search(company_name, x)]
+    for item in new_list:
+        print(item)
+
+def main():
+
+    RSS_data = article_data(title_list,\
+    URL_list,\
+    description_list,\
+    pubDate_list)
+
+    x = "finance"
+    check_for_company(x, RSS_data.title)
+    check_for_company(x, RSS_data.description)
+
+
+    '''
     for index in range(25):
         print("Title: ",reddit_RSS_data.article_title[index])
         print("Time: ",reddit_RSS_data.exact_time_released[index])
-        #print(reddit_RSS_data.short_descriptor[index])
+        #print(http://www.wsj.com/public/page/rss_news_and_feeds.htmlreddit_RSS_data.short_descriptor[index])
         print("URL: ",reddit_RSS_data.URL[index])
         print()
+    '''
+
 
 
 if __name__ == '__main__':
