@@ -7,6 +7,7 @@ class article_data:
         self.URL = URL
         self.description = description
         self.pubDate = pubDate
+        self.total =1
 
     # official string representitle_listation to make it look better in console
     #instead of showing where it's stored in memory

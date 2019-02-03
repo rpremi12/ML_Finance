@@ -17,6 +17,6 @@ def sent(str1):
     # Detects the sentiment of the text
     sentiment = client.analyze_sentiment(document=document).document_sentiment
 
-    return ('{}'.format(sentiment.score))
+    return (float('{}'.format(sentiment.score)))
 
 #analyze_sentiment("I really hate C")

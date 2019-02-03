@@ -37,7 +37,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.externals import joblib
 import entries
 import platform
-import news_scraper
+import news_scraper2
 
 # Load dataset
 url="C:\\Users\\John\\Desktop\\StkPreSys2018\\TSLA2.csv"
@@ -90,12 +90,14 @@ for name, model in models:
     print(msg)
 print(d) 
 # Compare Algorithms
+'''
 fig = plt.figure()
 fig.suptitle('Algorithm Comparison')
 ax = fig.add_subplot(111)
 plt.boxplot(results)
 ax.set_xticklabels(names)
-plt.show()
+'''
+#plt.show()
 # Make predictions on validation dataset
 lpred = []
 model = min(d, key=d.get)
@@ -113,19 +115,25 @@ Ysize=int(Y.shape[0]*validation_size)
 plt.plot(adapted_dates[-Ysize-1:], Y_validation)
 plt.plot(adapted_dates[-Ysize-1:], lpred)
 plt.legend(['Y_Validation', 'lpred'], loc='upper left')
-plt.show()
+#plt.show()
 plt.figure()
 print(model)
-sentiment = news_scraper.scrape("Tesla", category="business")
+sentiment = news_scraper2.scrape(new_url, category="business")
 #print('Sentiment: ', sentiment)
 #Testing the validation model in a practical setting
 joblib.dump(model, 'pythia.pkl')
 joblib.load('pythia.pkl')
 #Create prediction of all of the closes.
 y_pred = []
+print(X)
 y_predictions = model.predict(X)
 for i in y_predictions:
     y_pred.append(i)
+print(sentiment)
+if(sentiment < 0):
+    print("DONT BUY")
+if(sentiment >0):
+    print("BUY")
 #Plotting
 Y_pred_size=int(Y.shape[0])
 plt.plot(adapted_dates[-Y_pred_size:], Y)
@@ -138,7 +146,10 @@ import pandas as pd
 data_array_1 = {'date': adapted_dates[-Ysize-1:], 'Y_validation': Y_validation, 'lpred': lpred}
 df = pd.DataFrame(data=data_array_1)
 print(df.head())
+
 #Write to csv
 outfile = open('output.csv', 'w')
 df.to_csv('output.csv')
+
+
 outfile.close()
